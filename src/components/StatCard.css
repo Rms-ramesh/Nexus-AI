@@ -1,0 +1,89 @@
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.stat-card--blue::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); }
+.stat-card--cyan::before { background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green)); }
+.stat-card--green::before { background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan)); }
+.stat-card--orange::before { background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink)); }
+.stat-card--purple::before { background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink)); }
+
+.stat-card:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.stat-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.stat-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: var(--font-mono);
+}
+
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon--blue { background: rgba(99,179,237,0.1); color: var(--accent-blue); }
+.stat-icon--cyan { background: rgba(34,211,238,0.1); color: var(--accent-cyan); }
+.stat-icon--green { background: rgba(52,211,153,0.1); color: var(--accent-green); }
+.stat-icon--orange { background: rgba(251,146,60,0.1); color: var(--accent-orange); }
+.stat-icon--purple { background: rgba(167,139,250,0.1); color: var(--accent-purple); }
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.stat-change.positive { color: var(--accent-green); }
+.stat-change.negative { color: #f87171; }
+.stat-change.neutral { color: var(--text-muted); }
+
+.change-label {
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
